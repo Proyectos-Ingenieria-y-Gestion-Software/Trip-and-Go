@@ -1,0 +1,7 @@
+{
+  "name": "Trip-and-Go",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
