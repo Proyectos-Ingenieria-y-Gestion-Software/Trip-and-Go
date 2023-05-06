@@ -1,0 +1,16 @@
+<div class="body" height="100%">
+  <div class="head">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="places"></ion-back-button>
+    </ion-buttons>
+    <h1>{{place.name}}</h1>
+  </div>
+  <img src="{{place.img}}" alt="">
+  <p>{{place.description}}</p>
+  <p><strong>Dificulty: </strong>{{place.level}}</p>
+  <p><strong>Location: </strong>{{place.locationName}}</p>
+  <p><strong>Valuation: </strong>{{place.valuation}}</p>
+  <ion-button href="{{place.locationLink}}" target="_blank">
+    OPEN ON MAP
+  </ion-button>
+</div>
