@@ -2,9 +2,9 @@
   <h1 color="primary">PLACES</h1>
   <div class="places">
     <ion-item *ngFor="let place of places">
-      <ion-avatar (click)="viewPlace(place)">
+      <ion-thumbnail slot="start" (click)="viewPlace(place)">
         <img src="{{place.img}}" alt="image: {{place.name}}">
-      </ion-avatar>
+      </ion-thumbnail>
       <ion-label>
         <h2 (click)="viewPlace(place)">{{place.name}}</h2>
         <p><strong>Location: </strong><a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a></p>
