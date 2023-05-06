@@ -157,7 +157,7 @@
     --ion-background-color-rgb: 255, 255, 255;
 
     --ion-text-color: #000;
-    --ion-text-color-rgb: 255,255,255;
+    --ion-text-color-rgb: 0,0,0;
 
     --ion-border-color: #fff;
 
@@ -181,9 +181,9 @@
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: #000000;
+    --ion-item-background: #fff;
 
-    --ion-card-background: #1c1c1d;
+    --ion-card-background: #FFF;
   }
 
   .ios ion-modal {
@@ -202,8 +202,8 @@
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18,18,18;
 
-    --ion-text-color: #ffffff;
-    --ion-text-color-rgb: 255,255,255;
+    --ion-text-color: #000;
+    --ion-text-color-rgb: 0,0,0;
 
     --ion-border-color: #fff;
 

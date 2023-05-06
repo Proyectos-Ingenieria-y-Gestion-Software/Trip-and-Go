@@ -49,19 +49,6 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-grid>
-      <ion-row>
-        <ion-button routerLink="/places" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-        <h1 style="color: var(--ion-color-primary)">{{place.name}}</h1>
-      </ion-row>
-    </ion-grid>
-    <img src="{{place.img}}" alt="">
-    <p style="color: var(--ion-text-color)">{{place.description}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Dificulty: </strong>{{place.level}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Location: </strong>{{place.locationName}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Valuation: </strong>{{place.valuation}}</p>
-    <ion-button href="{{place.locationLink}}" target="_blank">
-      OPEN ON MAP
-    </ion-button>
+
   </ion-content>
 </div>
