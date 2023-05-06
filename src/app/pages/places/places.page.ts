@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { NavigationExtras } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Place } from 'src/app/interfaces/place';
 import { PlacesService } from 'src/app/services/places-service.service';
 
@@ -13,7 +13,7 @@ export class PlacesPage implements OnInit {
 
   places?: Place[];
 
-  constructor(private router: Router, private placesService: PlacesService) {
+  constructor(private navCtrl: NavController, private placesService: PlacesService) {
 
   }
 
@@ -21,6 +21,15 @@ export class PlacesPage implements OnInit {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places
     })
+  }
+
+  viewPlace(place: Place) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        place
+      }
+    };
+    this.navCtrl.navigateForward('place-details', navigationExtras);
   }
 
 }
