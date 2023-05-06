@@ -1,0 +1,21 @@
+.body {
+  background-color: #145363;
+  height: 100%;
+  text-align: center;
+}
+
+.body img {
+  margin-top: 50%;
+}
+
+ion-progress-bar::part(track) {
+  background: #969696;
+}
+
+ion-progress-bar::part(progress) {
+  background: #fff;
+}
+
+ion-progress-bar::part(stream) {
+  background-image: radial-gradient(ellipse at center, #fff 0%, #fff 30%, transparent 30%);
+}
