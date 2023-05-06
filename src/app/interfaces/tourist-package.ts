@@ -3,5 +3,6 @@ export interface TouristPackage {
   museums?: string[],
   name?: string,
   places?: string[],
-  restaurants?: string[]
+  restaurants?: string[],
+  id?: string
 }

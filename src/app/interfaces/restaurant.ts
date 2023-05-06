@@ -6,4 +6,5 @@ export interface Restaurant {
   locationName?: string,
   menu?: string,
   name?: string,
+  id?: string
 }

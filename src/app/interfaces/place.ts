@@ -5,5 +5,6 @@ export interface Place {
   locationLink?: string,
   locationName?: string,
   name?: string,
-  valuation?: string
+  valuation?: string,
+  id?: string
 }

@@ -5,5 +5,6 @@ export interface Museum {
   locationName?: string,
   name?: string,
   price?: string,
-  schedule?: string
+  schedule?: string,
+  id?: string
 }

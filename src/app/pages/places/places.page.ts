@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Place } from 'src/app/interfaces/place';
+import { PlacesService } from 'src/app/services/places-service.service';
 
 @Component({
   selector: 'app-places',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacesPage implements OnInit {
 
-  constructor() { }
+  places?: Place[];
+
+  constructor(private router: Router, private placesService: PlacesService) {
+
+  }
 
   ngOnInit() {
+    this.placesService.getPlaces().subscribe(places => {
+      this.places = places
+    })
   }
 
 }

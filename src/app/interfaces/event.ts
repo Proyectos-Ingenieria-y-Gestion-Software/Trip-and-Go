@@ -5,5 +5,6 @@ export interface Event {
   locationLink?: string,
   locationName?: string,
   name?: string,
-  price?: string
+  price?: string,
+  id?: string
 }
