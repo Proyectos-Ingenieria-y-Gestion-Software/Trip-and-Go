@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'places',
     loadChildren: () => import('./pages/places/places.module').then( m => m.PlacesPageModule)
   },
@@ -17,7 +18,6 @@ const routes: Routes = [
     path: 'place-details',
     loadChildren: () => import('./pages/place-details/place-details.module').then( m => m.PlaceDetailsPageModule)
   }
-
 ];
 
 @NgModule({
