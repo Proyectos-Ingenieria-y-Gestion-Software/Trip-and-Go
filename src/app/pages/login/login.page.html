@@ -7,25 +7,28 @@
   </ion-header>
 
   <ion-item-group class="content">
-    <ion-item class="item">
-      <ion-label class="texto" position="stacked">EMAIL</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
+      <ion-item class="item">
+        <ion-label class="texto" position="stacked">EMAIL</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label class="texto" >PASSWORD</ion-label>
+        <ion-input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password">
+          <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
+        </ion-input>
+      </ion-item>
+      
+      <ion-button class="button-text" fill="clear">Forgot your password?</ion-button>
+    </ion-item-group>
     
-    <ion-item>
-      <ion-label class="texto">PASSWORD</ion-label>
-      <ion-input type="{{ showPassword ? 'text' : 'password' }}"></ion-input>
-      <ion-button (click)="togglePassword()" item-end>
-        <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}"></ion-icon>
-      </ion-button>
-    </ion-item>
-    
-    
-    <ion-button class="button-text" fill="clear">Forgot your password?</ion-button>
-  </ion-item-group>
-  
-  <ion-button class="custom-button" (click)="login()">LOG IN</ion-button>
+    <ion-button class="custom-button" click="login()" type="submit">LOG IN</ion-button>
+
+    <ion-item-group>
+      <ion-item>
+        <ion-label>Don´t have an account?</ion-label>
+        <ion-button>SIGN UP NOW</ion-button>
+      </ion-item>
+    </ion-item-group>
 
 </ion-content>
-
-

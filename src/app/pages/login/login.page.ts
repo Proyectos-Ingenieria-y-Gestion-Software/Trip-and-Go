@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      // Aquí puedes agregar el código para procesar el inicio de sesión
+      
       console.log(this.loginForm.value);
     }
   }
