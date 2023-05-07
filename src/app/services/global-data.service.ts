@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class GlobalDataService {
 
-  private _visibleComponents = new BehaviorSubject<boolean>(true);
+  private _visibleComponents = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
