@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GlobalDataService } from './services/global-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  visibleComponents!: boolean;
+  constructor(private globalData: GlobalDataService) {
+    this.globalData.getVisibleComponents().subscribe(value => {
+      this.visibleComponents = value;
+    });
+   }
+
 }

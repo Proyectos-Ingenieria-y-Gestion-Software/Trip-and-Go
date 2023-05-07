@@ -1,3 +1,16 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
+  <ion-tabs *ngIf="visibleComponents">
+    <ion-tab-bar slot="bottom" class="footer footer-bar">
+      <ion-tab-button routerLink="/">
+        <ion-thumbnail><img src="../assets/icon/footer/location.png" alt="Location"></ion-thumbnail>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/home">
+        <ion-thumbnail><img src="../assets/icon/footer/home.png" alt="Home"></ion-thumbnail>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/">
+        <ion-thumbnail><img src="../assets/icon/footer/user.png" alt="User"></ion-thumbnail>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>

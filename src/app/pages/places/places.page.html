@@ -1,0 +1,65 @@
+<ion-menu contentId="main-content" side="end">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Trip&Go</ion-title>
+      <ion-menu-toggle side="end">
+        <ion-button><ion-icon name="close-outline"></ion-icon></ion-button>
+      </ion-menu-toggle>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list lines="none">
+      <ion-item routerLink="" class="login-singup">
+        <ion-label>LOGIN  |  SINGUP</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="tourist-packages">
+        <ion-label>TOURIST PACKAGES</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="events">
+        <ion-label>EVENTS</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="museums">
+        <ion-label>MUSEUMS</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="restaurants">
+        <ion-label>RESTAURANTS</ion-label>
+      </ion-item>
+      <ion-item routerLink="/places" class="places">
+        <ion-label>FREE ACCESS PLACES</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="contact">
+        <ion-label>CONTACT</ion-label>
+      </ion-item>
+      <ion-item routerLink="" class="fqa">
+        <ion-label>FQ&A</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-avatar routerLink="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
+      </ion-buttons>
+      <ion-title>Trip&Go</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <h1 style="color: var(--ion-color-primary)">PLACES</h1>
+    <div class="places">
+      <ion-item *ngFor="let place of places">
+        <ion-thumbnail slot="start" (click)="viewPlace(place)">
+          <img src="{{place.img}}" alt="image: {{place.name}}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2 (click)="viewPlace(place)">{{place.name}}</h2>
+          <strong>Location: </strong><a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-content>
+</div>
