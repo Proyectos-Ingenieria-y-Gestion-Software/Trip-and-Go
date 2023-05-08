@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+    <ion-toolbar class="toolbar">
+      <ion-avatar routerLink="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
+      <ion-title size="large" class="tittle">TRIP & GO</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-item-group class="content">
+      <ion-item class="item">
+        <ion-label label="Enter your email" class="texto" position="stacked">EMAIL</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label label="Enter your password" class="texto" >PASSWORD</ion-label>
+        <ion-input  type="{{ showPassword ? 'text' : 'password' }}">
+          <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
+        </ion-input>
+      </ion-item>
+      
+    </ion-item-group>
+    
+    <ion-button class="custom-button" click="login()" type="submit">REGISTER</ion-button>
+
 </ion-content>

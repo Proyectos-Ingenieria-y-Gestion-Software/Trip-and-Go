@@ -8,27 +8,27 @@
 
   <ion-item-group class="content">
       <ion-item class="item">
-        <ion-label class="texto" position="stacked">EMAIL</ion-label>
-        <ion-input type="email" formControlName="email"></ion-input>
+        <ion-label label="Enter your email" class="texto" position="stacked">EMAIL</ion-label>
+        <ion-input type="email"></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label class="texto" >PASSWORD</ion-label>
-        <ion-input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password">
+        <ion-label label="Enter your password" class="texto" >PASSWORD</ion-label>
+        <ion-input  type="{{ showPassword ? 'text' : 'password' }}">
           <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
         </ion-input>
       </ion-item>
       
       <ion-button class="button-text" fill="clear">Forgot your password?</ion-button>
     </ion-item-group>
-    
-    <ion-button class="custom-button" click="login()" type="submit">LOG IN</ion-button>
 
-    <ion-item-group>
-      <ion-item>
-        <ion-label>Don´t have an account?</ion-label>
-        <ion-button>SIGN UP NOW</ion-button>
-      </ion-item>
-    </ion-item-group>
+    <ion-button class="custom-button" (click)="login()" type="submit">LOG IN</ion-button>
+
+
+    <ion-item class="item-register">
+      <ion-label class="texto" position="stacked">DON´T HAVE AN ACCOUNT?</ion-label>
+      <ion-button class="button-signup" routerLink="/register">SIGN UP</ion-button>
+    </ion-item>
+    
 
 </ion-content>

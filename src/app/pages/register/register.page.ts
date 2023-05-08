@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
+  showPassword = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
   }
 
 }

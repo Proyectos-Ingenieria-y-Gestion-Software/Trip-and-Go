@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +8,20 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
-  loginForm: FormGroup;
   showPassword = false;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+  @ViewChild('emailInput', { static: false }) emailInput!: IonInput;
+  @ViewChild('passwordInput', { static: false }) passwordInput!: IonInput;
+
+  constructor() {
   }
 
   ngOnInit() {}
 
   login() {
-    if (this.loginForm.valid) {
-      
-      console.log(this.loginForm.value);
-    }
+    const email = this.emailInput.value;
+    const password = this.passwordInput.value;
+    // Aquí se puede comprobar si el usuario existe en Firebase y realizar la lógica de inicio de sesión
   }
 
   togglePassword(): void {
