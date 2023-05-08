@@ -49,9 +49,65 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <div id="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    </div>
+
+      <ion-scroll scrollX="true" class="image-list">
+        <div class="slide" *ngFor="let item of places">
+          <div class="container">
+            <p>{{ item.name }}</p>
+            <img [src]="item.img">
+          </div>
+        </div>
+      </ion-scroll>
+
+      <div class="card" >
+        <h2 class="title">Título</h2>
+        <div class="image">
+          <img src="imagen.jpg" alt="Imagen">
+        </div>
+        <div class="content">
+          <h3 class="name">Nombre</h3>
+          <p class="description">Descripción</p>
+          <a href="#" class="link">See more</a>
+        </div>
+      </div>
+
+      <div class="card" >
+        <h2 class="title">Título</h2>
+        <div class="image">
+          <img src="imagen.jpg" alt="Imagen">
+        </div>
+        <div class="content">
+          <h3 class="name">Nombre</h3>
+          <p class="description">Descripción</p>
+          <a href="#" class="link">See more</a>
+        </div>
+      </div>
+
+      <div class="card" >
+        <h2 class="title">Título</h2>
+        <div class="image">
+          <img src="imagen.jpg" alt="Imagen">
+        </div>
+        <div class="content">
+          <h3 class="name">Nombre</h3>
+          <p class="description">Descripción</p>
+          <a href="#" class="link">See more</a>
+        </div>
+      </div>
+
+      <div class="card" >
+        <h2 class="title">Título</h2>
+        <div class="image">
+          <img src="imagen.jpg" alt="Imagen">
+        </div>
+        <div class="content">
+          <h3 class="name">Nombre</h3>
+          <p class="description">Descripción</p>
+          <a href="#" class="link">See more</a>
+        </div>
+      </div>
+
+
+
   </ion-content>
 </div>
