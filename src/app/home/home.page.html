@@ -65,55 +65,61 @@
       <span class="dot" *ngFor="let item of places; let i = index" [class.active]="i === currentIndex"></span>
     </div>
 
-      <div class="card" >
-        <h2 class="title">Título</h2>
-        <div class="image">
-          <img src="imagen.jpg" alt="Imagen">
-        </div>
-        <div class="content">
-          <h3 class="name">Nombre</h3>
-          <p class="description">Descripción</p>
-          <a href="#" class="link">See more</a>
-        </div>
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER RESTAURANTS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
       </div>
-
-      <div class="card" >
-        <h2 class="title">Título</h2>
-        <div class="image">
-          <img src="imagen.jpg" alt="Imagen">
-        </div>
-        <div class="content">
-          <h3 class="name">Nombre</h3>
-          <p class="description">Descripción</p>
-          <a href="#" class="link">See more</a>
-        </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
       </div>
+    </div>
 
-      <div class="card" >
-        <h2 class="title">Título</h2>
-        <div class="image">
-          <img src="imagen.jpg" alt="Imagen">
-        </div>
-        <div class="content">
-          <h3 class="name">Nombre</h3>
-          <p class="description">Descripción</p>
-          <a href="#" class="link">See more</a>
-        </div>
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER FREE ACCESS PLACES</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
       </div>
-
-      <div class="card" >
-        <h2 class="title">Título</h2>
-        <div class="image">
-          <img src="imagen.jpg" alt="Imagen">
-        </div>
-        <div class="content">
-          <h3 class="name">Nombre</h3>
-          <p class="description">Descripción</p>
-          <a href="#" class="link">See more</a>
-        </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
       </div>
+    </div>
 
 
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER MUSEUMS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER RESTAURANTS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+    <div class = "containerLastTitle"> 
+      <h1 class="lastTitle">PLACES NEAR YOU</h1>
+    </div>
+
+    <div id="map"></div>
+    
 
   </ion-content>
 </div>

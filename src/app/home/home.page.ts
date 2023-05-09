@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Place } from 'src/app/interfaces/place';
 import { PlacesService } from 'src/app/services/places-service.service';
+import { EventsService } from '../services/events-service.service';
+import { RestaurantsService } from '../services/restaurants-service.service';
+import { Restaurant } from '../interfaces/restaurant';
+import * as L from 'leaflet';
+import { Map as LeafletMap, tileLayer, Marker } from 'leaflet';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +16,12 @@ import { PlacesService } from 'src/app/services/places-service.service';
 export class HomePage {
 
   places: Place[] = [];
-  placeGroups?: Place[][];
+
+  firstPlace: any;
+
+  map?: LeafletMap;
+
+  firstRestaurant: any;
 
   slideOpts = {
   slidesPerView: 1.2,
@@ -21,11 +31,16 @@ export class HomePage {
 
   currentIndex = 0;
 
-  constructor(private navController: NavController, private placesService: PlacesService) {}
+  constructor(private navController: NavController, private placesService: PlacesService, 
+    private eventsService: EventsService, private restaurantService:RestaurantsService) {}
 
   ngOnInit() {
-    this.placesService.getPlaces().subscribe(places => {
-      this.places = places.slice(0, 5);
+    this.placesService.getPlaces().subscribe(placesdb => {
+      this.places = placesdb.slice(0, 5);
+
+      this.firstPlace = placesdb[6]; // Obtener el primer restaurante
+
+
 
       setInterval(() => {
         this.currentIndex = (this.currentIndex + 1) % this.places.length;
@@ -41,10 +56,28 @@ export class HomePage {
         }
       }, 8000);
     });
+
+    this.restaurantService.getRestaurants().subscribe(restaurantdb => {
+      const firstRestaurant = restaurantdb[0]; // Obtener el primer restaurante
+    });
+
+    this.map = L.map('map', {
+      center: [ 28.136154, -15.439822 ],
+      zoom: 10,
+      renderer: L.canvas()
+    })
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+    }).addTo(this.map)
+
+
   }
-  
 
   goPlaces() {
     this.navController.navigateForward('places');
   }
+
+
+  
 }
