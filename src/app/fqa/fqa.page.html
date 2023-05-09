@@ -48,11 +48,38 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
+  
   <ion-content>
-    <div id="container">
-      <strong>Esta es la pagina FQA</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="square-container">
+      <div class="square" (click)="showText(1)">
+        <div class="square-label">Cuadrado 1</div>
+        <div class="square-content" *ngIf="showText1">
+          <span class="answer">Texto respuesta aquí</span>
+        </div>
+      </div>
     </div>
-  </ion-content>
-</div>
+    
+    <div class="square-container">
+      <div class="square" (click)="showText(2)">
+        <div class="square-label">Cuadrado 2</div>
+        <div class="square-content" *ngIf="showText2">
+          <span class="answer">Texto respuesta aquí</span>
+        </div>
+      </div>
+    </div>
 
+    <div class="square-container">
+      <div class="square" (click)="showText(3)">
+        <div class="square-label">Cuadrado 3</div>
+        <div class="square-content" *ngIf="showText3">
+          <span class="answer">Texto respuesta aquí</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Agrega más cuadrados aquí según sea necesario -->
+  
+  </ion-content>
+  
+
+</div>
