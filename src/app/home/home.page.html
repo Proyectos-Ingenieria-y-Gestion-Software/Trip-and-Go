@@ -50,14 +50,20 @@
   </ion-header>
   <ion-content>
 
-      <ion-scroll scrollX="true" class="image-list">
-        <div class="slide" *ngFor="let item of places">
+    <ion-scroll scrollX="true" class="image-list">
+      <div class="slides-container" [style.width.px]="places.length * 50">
+        <div class="slide" *ngFor="let item of places; let i = index" [style.transform]="'translateX(' + (i * 100) + '%)'">
           <div class="container">
             <p>{{ item.name }}</p>
             <img [src]="item.img">
           </div>
         </div>
-      </ion-scroll>
+      </div>
+    </ion-scroll>
+    
+    <div class="pagination">
+      <span class="dot" *ngFor="let item of places; let i = index" [class.active]="i === currentIndex"></span>
+    </div>
 
       <div class="card" >
         <h2 class="title">Título</h2>
