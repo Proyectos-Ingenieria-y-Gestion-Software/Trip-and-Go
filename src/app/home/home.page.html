@@ -49,9 +49,77 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <div id="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-scroll scrollX="true" class="image-list">
+      <div class="slides-container" [style.width.px]="places.length * 50">
+        <div class="slide" *ngFor="let item of places; let i = index" [style.transform]="'translateX(' + (i * 100) + '%)'">
+          <div class="container">
+            <p>{{ item.name }}</p>
+            <img [src]="item.img">
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+    
+    <div class="pagination">
+      <span class="dot" *ngFor="let item of places; let i = index" [class.active]="i === currentIndex"></span>
     </div>
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER RESTAURANTS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER FREE ACCESS PLACES</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER MUSEUMS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+
+    <div class="elementsTemplate">
+      <h1 class="title">DISCOVER RESTAURANTS</h1>
+      <div class ="containerImageTemplate">
+        <img class="imageTemplate" src="{{ firstPlace.img }}">
+      </div>
+      <div class ="containerDetails">
+      <div class="name">{{ firstPlace.name }}</div>
+      <div class="description">{{ firstPlace.description }}</div>
+      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      </div>
+    </div>
+    <div class = "containerLastTitle"> 
+      <h1 class="lastTitle">PLACES NEAR YOU</h1>
+    </div>
+
+    <div id="map"></div>
+    
+
   </ion-content>
 </div>
