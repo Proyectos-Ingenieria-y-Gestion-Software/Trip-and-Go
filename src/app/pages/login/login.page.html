@@ -14,21 +14,21 @@
       
       <ion-item>
         <ion-label label="Enter your password" class="texto" >PASSWORD</ion-label>
-        <ion-input  type="{{ showPassword ? 'text' : 'password' }}">
-          <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
+        <ion-input class="ion-padding-end" type="{{ showPassword ? 'text' : 'password' }}" class="ion-align-items-center">
+          <ion-button (click)="togglePassword()" class="ion-justify-content-end" slot="end">
+            <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}"></ion-icon>
+          </ion-button>
         </ion-input>
       </ion-item>
+      
       
       <ion-button class="button-text" fill="clear">Forgot your password?</ion-button>
     </ion-item-group>
 
     <ion-button class="custom-button" (click)="login()" type="submit">LOG IN</ion-button>
 
-
     <ion-item class="item-register">
       <ion-label class="texto" position="stacked">DON´T HAVE AN ACCOUNT?</ion-label>
-      <ion-button class="button-signup" routerLink="/register">SIGN UP</ion-button>
+      <ion-button class="button-signup" fill="outline" routerLink="/register">SIGN UP</ion-button>
     </ion-item>
-    
-
 </ion-content>

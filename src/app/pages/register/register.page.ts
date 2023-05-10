@@ -18,4 +18,8 @@ export class RegisterPage implements OnInit {
     this.showPassword = !this.showPassword;
   }
 
+  register(){
+    
+  }
+
 }
