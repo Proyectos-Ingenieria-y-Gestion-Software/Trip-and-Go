@@ -17,27 +17,27 @@
       <ion-input type="text"></ion-input>
     </ion-item>
 
-      <ion-item class="item">
-        <ion-label label="Enter an email" class="texto" position="stacked">EMAIL</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
-        <ion-input  type="{{ showPassword ? 'text' : 'password' }}">
-          <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
-        </ion-input>
-      </ion-item>
+    <ion-item class="item">
+      <ion-label label="Enter an email" class="texto" position="stacked">EMAIL</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label label="Repeat a password" class="texto" position="stacked" >REPEAT PASSWORD</ion-label>
-        <ion-input  type="{{ showPassword ? 'text' : 'password' }}">
-          <ion-button (click)="togglePassword()"><ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" slot="icon-only" (click)="togglePassword()"></ion-icon></ion-button>
-        </ion-input>
-      </ion-item>
-      
-    </ion-item-group>
-    
-    <ion-button class="custom-button" (click)="register()" type="submit">REGISTER</ion-button>
+    <ion-item>
+      <ion-label label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
+      <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+      <ion-button (click)="togglePassword()" slot="end" class="ojo">
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
 
+    <ion-item>
+      <ion-label label="Repeat a password" class="texto" position="stacked">REPEAT PASSWORD</ion-label>
+      <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+      <ion-button (click)="togglePassword()" slot="end" class="ojo">
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-button class="custom-button" (click)="register()" type="submit">REGISTER</ion-button>
 </ion-content>

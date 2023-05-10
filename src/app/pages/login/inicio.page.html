@@ -13,16 +13,15 @@
       </ion-item>
       
       <ion-item>
-        <ion-label label="Enter your password" class="texto" >PASSWORD</ion-label>
-        <ion-input class="ion-padding-end" type="{{ showPassword ? 'text' : 'password' }}" class="ion-align-items-center">
-          <ion-button (click)="togglePassword()" class="ion-justify-content-end" slot="end">
-            <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}"></ion-icon>
-          </ion-button>
-        </ion-input>
+        <ion-label label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
+        <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+        <ion-button (click)="togglePassword()" slot="end" class="ojo">
+          <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
       </ion-item>
       
       
-      <ion-button class="button-text" fill="clear">Forgot your password?</ion-button>
+      <ion-button class="button-text" fill="clear" routerLink="/forgot-password" >Forgot your password?</ion-button>
     </ion-item-group>
 
     <ion-button class="custom-button" (click)="login()" type="submit">LOG IN</ion-button>

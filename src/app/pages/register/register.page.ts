@@ -14,12 +14,12 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-  togglePassword(): void {
+  togglePassword() {
     this.showPassword = !this.showPassword;
   }
 
   register(){
-    
+
   }
 
 }
