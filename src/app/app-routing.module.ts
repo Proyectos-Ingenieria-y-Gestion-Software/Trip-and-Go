@@ -17,12 +17,22 @@ const routes: Routes = [
   {
     path: 'place-details',
     loadChildren: () => import('./pages/place-details/place-details.module').then( m => m.PlaceDetailsPageModule)
-  },  {
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   }
 
 ];
+
 
 @NgModule({
   imports: [
