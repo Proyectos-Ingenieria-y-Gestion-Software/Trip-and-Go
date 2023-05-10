@@ -8,31 +8,31 @@
 
   <ion-item-group class="content">
     <ion-item class="item">
-      <ion-label label="Enter your name" class="texto" position="stacked">NAME</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label aria-label="Enter your name" class="texto" position="stacked" >NAME</ion-label>
+      <ion-input type="text" placeholder="Enter your name"></ion-input>
     </ion-item>
 
     <ion-item class="item">
-      <ion-label label="Enter your surname" class="texto" position="stacked">SURNAME</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label aria-label="Enter your surname" class="texto" position="stacked" >SURNAME</ion-label>
+      <ion-input type="text" placeholder="Enter your surname"></ion-input>
     </ion-item>
 
     <ion-item class="item">
-      <ion-label label="Enter an email" class="texto" position="stacked">EMAIL</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-label aria-label="Enter an email" class="texto" position="stacked" >EMAIL</ion-label>
+      <ion-input type="email" placeholder="Enter an email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
-      <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+      <ion-label aria-label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
+      <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Enter a password"></ion-input>
       <ion-button (click)="togglePassword()" slot="end" class="ojo">
         <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
       </ion-button>
     </ion-item>
 
     <ion-item>
-      <ion-label label="Repeat a password" class="texto" position="stacked">REPEAT PASSWORD</ion-label>
-      <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+      <ion-label aria-label="Repeat a password" class="texto" position="stacked">REPEAT PASSWORD</ion-label>
+      <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Repeat the password"></ion-input>
       <ion-button (click)="togglePassword()" slot="end" class="ojo">
         <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
       </ion-button>

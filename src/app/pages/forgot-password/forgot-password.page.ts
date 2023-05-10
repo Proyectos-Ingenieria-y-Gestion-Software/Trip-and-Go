@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonInput } from '@ionic/angular';
+import { UsersService } from 'src/app/services/users-service.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordPage implements OnInit {
 
-  constructor() { }
+  @ViewChild('emailInput', { static: true }) emailInput!: IonInput;
+
+  constructor(private resetPasswordService: UsersService) { }
 
   ngOnInit() {
   }
 
   resetPassword() {
-    
+    const userEmail = this.emailInput.value as string;
+    console.log('El correo electrónico ingresado es:', userEmail);
+    this.resetPasswordService.resetPassword(userEmail);
   }
 
 }
