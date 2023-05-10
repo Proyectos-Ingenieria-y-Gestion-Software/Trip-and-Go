@@ -1,0 +1,27 @@
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 10px auto;
+    border-radius: 20px;
+    border: 4px solid #145265;
+    padding: 20px;
+    color: #666
+}
+
+
+.form-input {
+    color: #666; /* Cambia este color al color deseado */
+}
+
+.form-label{
+    font-weight: bold; /* Hace el texto en negrita */
+    color: #666; /* Establece el color gris */
+    font-size: 1.2rem; /* Establece el tamaño de fuente ligeramente más grande */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.form-inputlabel{
+    color: #666;
+}
