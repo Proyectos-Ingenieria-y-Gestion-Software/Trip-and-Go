@@ -19,6 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/place-details/place-details.module').then( m => m.PlaceDetailsPageModule)
   },
   {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'fqa',
+    loadChildren: () => import('./fqa/fqa.module').then( m => m.FQAPageModule)
+  },
+  {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
