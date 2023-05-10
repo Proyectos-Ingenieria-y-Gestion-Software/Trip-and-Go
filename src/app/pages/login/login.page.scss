@@ -1,0 +1,56 @@
+ion-title{
+    color: #EFC749;
+    text-align: center;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3em;
+    margin-left: 2em;
+  }
+
+.content{
+    margin-top: 3em;
+    margin-left: 1em;
+}
+
+.texto{
+    color: #145265;
+    font-weight: bold;
+}
+
+ion-input{
+    border: 0.1em solid #145265;
+    border-radius: 0.5em;
+}
+
+.item{
+    margin-bottom: 2em;
+}
+
+.button-text {
+    color: #145265;
+    font-size: 0.8em;
+    margin-top: -2em;
+  }
+  
+.custom-button {
+    --width: 2em;
+    margin-left: 9.5em;
+    margin-top: 2em;
+  }
+  
+.item-register{
+    text-align: center;
+    align-items: center;
+    margin-top: 7em;
+}
+
+.button-signup{
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px;
+
+}
