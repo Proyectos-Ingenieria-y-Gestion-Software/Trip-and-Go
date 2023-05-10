@@ -4,7 +4,7 @@ import { Place } from 'src/app/interfaces/place';
 import { PlacesService } from 'src/app/services/places-service.service';
 import { EventsService } from '../services/events-service.service';
 import { RestaurantsService } from '../services/restaurants-service.service';
-import { Restaurant } from '../interfaces/restaurant';
+import { MuseumsService } from '../services/museums-service.service';
 import * as L from 'leaflet';
 import { Map as LeafletMap, tileLayer, Marker } from 'leaflet';
 
@@ -19,6 +19,10 @@ export class HomePage {
 
   firstPlace: any;
 
+  firstEvent: any;
+
+  firstMuseum: any;
+
   map?: LeafletMap;
 
   firstRestaurant: any;
@@ -32,7 +36,8 @@ export class HomePage {
   currentIndex = 0;
 
   constructor(private navController: NavController, private placesService: PlacesService, 
-    private eventsService: EventsService, private restaurantService:RestaurantsService) {}
+    private eventsService: EventsService, private restaurantService:RestaurantsService, 
+    private museumService: MuseumsService) {}
 
   ngOnInit() {
     this.placesService.getPlaces().subscribe(placesdb => {
@@ -58,8 +63,24 @@ export class HomePage {
     });
 
     this.restaurantService.getRestaurants().subscribe(restaurantdb => {
-      const firstRestaurant = restaurantdb[0]; // Obtener el primer restaurante
+
+        this.firstRestaurant = restaurantdb[0]; // Obtener el primer restaurante
+
     });
+
+    this.eventsService.getEvents().subscribe(eventsdb => {
+
+      this.firstEvent = eventsdb[1]; // Obtener el primer restaurante
+
+    });
+
+    this.museumService.getMuseums().subscribe(museumsdb => {
+
+      this.firstMuseum = museumsdb[1]; // Obtener el primer restaurante
+
+    });
+
+
 
     this.map = L.map('map', {
       center: [ 28.136154, -15.439822 ],
