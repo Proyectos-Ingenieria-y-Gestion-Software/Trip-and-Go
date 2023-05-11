@@ -20,11 +20,11 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
   },
   {
     path: 'fqa',
-    loadChildren: () => import('./fqa/fqa.module').then( m => m.FQAPageModule)
+    loadChildren: () => import('./pages/fqa/fqa.module').then( m => m.FQAPageModule)
   },
   {
     path: 'register',
@@ -33,7 +33,40 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'tourist-packages',
+    loadChildren: () => import('./pages/tourist-packages/tourist-packages.module').then( m => m.TouristPackagesPageModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
+  },
+  {
+    path: 'museums',
+    loadChildren: () => import('./pages/museums/museums.module').then( m => m.MuseumsPageModule)
+  },
+  {
+    path: 'restaurants',
+    loadChildren: () => import('./pages/restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+  },
+  {
+    path: 'restaurant-details',
+    loadChildren: () => import('./pages/restaurant-details/restaurant-details.module').then( m => m.RestaurantDetailsPageModule)
+  },
+  {
+    path: 'museum-details',
+    loadChildren: () => import('./pages/museum-details/museum-details.module').then( m => m.MuseumDetailsPageModule)
+  },
+  {
+    path: 'event-details',
+    loadChildren: () => import('./pages/event-details/event-details.module').then( m => m.EventDetailsPageModule)
+  },
+  {
+    path: 'tourist-package-details',
+    loadChildren: () => import('./pages/tourist-package-details/tourist-package-details.module').then( m => m.TouristPackageDetailsPageModule)
   }
+
 
 ];
 
