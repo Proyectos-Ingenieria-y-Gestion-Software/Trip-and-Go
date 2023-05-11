@@ -51,16 +51,16 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">PLACES</h1>
+      <h1 style="color: var(--ion-color-primary)">EVENTS</h1>
     </ion-row>
-    <div class="places">
-      <ion-item *ngFor="let place of places">
-        <ion-thumbnail slot="start" (click)="viewPlace(place)">
-          <img src="{{place.img}}" alt="image: {{place.name}}">
+    <div class="EVENTS">
+      <ion-item *ngFor="let event of events">
+        <ion-thumbnail slot="start" (click)="viewEvent(event)">
+          <img src="{{event.img}}" alt="image: {{event.name}}">
         </ion-thumbnail>
         <ion-label>
-          <h2 (click)="viewPlace(place)">{{place.name}}</h2>
-          <strong>Location: </strong><a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a>
+          <h2 (click)="viewEvent(event)">{{event.name}}</h2>
+          <p><strong>Event date: </strong>{{event.date}}</p>
         </ion-label>
       </ion-item>
     </div>

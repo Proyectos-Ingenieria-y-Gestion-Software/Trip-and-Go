@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 import { GlobalDataService } from './services/global-data.service';
 
 @Component({
@@ -13,6 +12,6 @@ export class AppComponent {
     this.globalData.getVisibleComponents().subscribe(value => {
       this.visibleComponents = value;
     });
-   }
+  }
 
 }

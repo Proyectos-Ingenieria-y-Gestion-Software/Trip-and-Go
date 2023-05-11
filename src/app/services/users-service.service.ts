@@ -3,13 +3,14 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Auth, authState, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from '@angular/fire/auth';
 import { map, Observable } from 'rxjs';
 import { User } from '../interfaces/user';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private af: AngularFirestore, private auth: Auth) { }
+  constructor(private af: AngularFirestore, private auth: Auth, private afAuth: AngularFireAuth) { }
 
   getUsuarios() {
     return this.af.collection<User>('usuarios').valueChanges();
@@ -68,6 +69,14 @@ export class UsersService {
 
   getCurrentUserId(){
     return this.auth.currentUser?.uid;
+  }
+
+  async resetPassword(email:string): Promise<void>{
+    try {
+      return this.afAuth.sendPasswordResetEmail(email);
+    } catch(error) {
+      console.log(error);
+    }
   }
 
 }
