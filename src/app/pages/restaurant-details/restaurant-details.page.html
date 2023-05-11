@@ -40,7 +40,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-avatar routerLink="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
+        <ion-avatar href="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
       </ion-buttons>
       <ion-title>Trip&Go</ion-title>
       <ion-buttons slot="end">
@@ -49,20 +49,19 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-row>
-      <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">PLACES</h1>
-    </ion-row>
-    <div class="places">
-      <ion-item *ngFor="let place of places">
-        <ion-thumbnail slot="start" (click)="viewPlace(place)">
-          <img src="{{place.img}}" alt="image: {{place.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewPlace(place)">{{place.name}}</h2>
-          <strong>Location: </strong><a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a>
-        </ion-label>
-      </ion-item>
-    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-button routerLink="/restaurants" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
+        <h1 style="color: var(--ion-color-primary)">{{restaurant.name}}</h1>
+      </ion-row>
+    </ion-grid>
+    <img src="{{restaurant.img}}" alt="">
+    <p style="color: var(--ion-text-color)">{{restaurant.description}}</p>
+    <p style="color: var(--ion-text-color)"><strong>Contact info: </strong>{{restaurant.contact}}</p>
+    <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{restaurant.locationLink}}">{{restaurant.locationName}}</a></p>
+    <p style="color: var(--ion-text-color)"><strong>Menu: </strong>{{restaurant.menu}}</p>
+    <ion-button href="{{restaurant.locationLink}}" target="_blank">
+      BOOK A MEAL
+    </ion-button>
   </ion-content>
 </div>
