@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
 import { Event } from 'src/app/interfaces/event';
 
 @Component({
@@ -12,7 +11,7 @@ export class EventDetailsPage implements OnInit {
 
   event!: Event;
 
-  constructor(private navCtrl: NavController, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

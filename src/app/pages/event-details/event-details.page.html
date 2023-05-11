@@ -57,9 +57,9 @@
     </ion-grid>
     <img src="{{event.img}}" alt="">
     <p style="color: var(--ion-text-color)">{{event.description}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Dificulty: </strong>{{event.date}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Location: </strong>{{event.locationName}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Valuation: </strong>{{event.price}}</p>
+    <p style="color: var(--ion-text-color)"><strong>Date: </strong>{{event.date}}</p>
+    <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{event.locationLink}}">{{event.locationName}}</a></p>
+    <p style="color: var(--ion-text-color)"><strong>Price: </strong>{{event.price}}</p>
     <ion-button href="{{event.locationLink}}" target="_blank">
       BUY TICKETS
     </ion-button>
