@@ -66,7 +66,10 @@ const routes: Routes = [
     path: 'tourist-package-details',
     loadChildren: () => import('./pages/tourist-package-details/tourist-package-details.module').then( m => m.TouristPackageDetailsPageModule)
   }
-
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  }
 
 ];
 
