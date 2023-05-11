@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Place } from 'src/app/interfaces/place';
 
 @Component({
@@ -18,7 +18,7 @@ export class PlaceDetailsPage implements OnInit {
       if(params['place']) {
         this.place = params['place'];
       }
-    })
+    });
   }
 
 }
