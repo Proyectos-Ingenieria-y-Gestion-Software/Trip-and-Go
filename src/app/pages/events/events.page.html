@@ -49,7 +49,10 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <h1 style="color: var(--ion-color-primary)">EVENTS</h1>
+    <ion-row>
+      <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
+      <h1 style="color: var(--ion-color-primary)">EVENTS</h1>
+    </ion-row>
     <div class="EVENTS">
       <ion-item *ngFor="let event of events">
         <ion-thumbnail slot="start" (click)="viewEvent(event)">
