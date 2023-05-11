@@ -20,7 +20,7 @@ export class PlacesPage implements OnInit {
   ngOnInit() {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places
-    })
+    });
   }
 
   viewPlace(place: Place) {
