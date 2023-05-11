@@ -25,3 +25,180 @@
 #container a {
   text-decoration: none;
 }
+
+
+.image-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  height: 250px;
+}
+
+.slides-container{
+  display: flex;
+  transition: transform 1s ease;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+}
+
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  background-color: #145363;
+  border-radius: 5px;
+}
+
+.container {
+  overflow: hidden;
+  width: 150px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color:#ffffff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgba(20, 82, 101, 0.5);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.active {
+  transform: scale(1.5);
+  background-color: #145265;
+}
+
+.containerImageTemplate {
+  height: 170px; 
+  width: 125px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageTemplate { 
+  max-width: 80%;
+  max-height: 60%;
+}
+.elementsTemplate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0px 0px;
+  margin: 0 auto;
+  width: 250px;
+  height: 190px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "title title"
+    "Image details";
+}
+
+
+
+.containerDetails {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr 0.5fr 0.25fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "name"
+    "description"
+    "url";
+}
+
+.name { 
+  grid-area: name;
+  font-size: 11px;
+  text-align: justify;
+  margin-right: 10px;
+  margin-top: 40px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  color: #145265;
+}
+
+.description {
+  grid-area: description; 
+  font-size: 7px;
+  text-align: justify;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+
+.url { 
+  grid-area: url; 
+  text-align: left;
+  font-size: 7px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.urlText{
+  text-align: left;
+}
+
+
+.title { 
+  grid-area: title; 
+  font-size: 13px;
+  margin-left: 15px;
+  margin-bottom: -40px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  color: #145265;
+}
+
+.lastTitle { 
+  grid-area: title; 
+  font-size: 13px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  color: #145265;
+}
+
+.containerLastTitle{
+  width: 250px;
+  margin: 0 auto;
+}
+
+#map {
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
