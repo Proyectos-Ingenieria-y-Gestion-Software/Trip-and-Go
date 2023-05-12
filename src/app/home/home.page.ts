@@ -9,6 +9,7 @@ import { Restaurant } from '../interfaces/restaurant';
 import { NavigationExtras } from '@angular/router';
 import * as L from 'leaflet';
 import { Map as LeafletMap, tileLayer, Marker } from 'leaflet';
+import { Museum } from '../interfaces/museum';
 
 @Component({
   selector: 'app-home',
@@ -47,32 +48,21 @@ export class HomePage {
   ngOnInit() {
     this.placesService.getPlaces().subscribe(placesdb => {
       this.places = placesdb.slice(0, 5);
-
-      this.firstPlace = placesdb[6]; 
-
-      this.startSlideInterval(); 
-
+      this.firstPlace = placesdb[6];
+      this.startSlideInterval();
     });
-
     this.eventsService.getEvents().subscribe(eventsdb => {
       this.firstEvent = eventsdb[1];
-
     });
-
     this.restaurantService.getRestaurants().subscribe(restaurantdb => {
-        this.firstRestaurant = restaurantdb[2]; 
+        this.firstRestaurant = restaurantdb[2];
     });
-
     this.museumsService.getMuseums().subscribe(museumsdb => {
-        this.firstMuseum = museumsdb[2]; 
+        this.firstMuseum = museumsdb[2];
     });
-
     this.eventsService.getEvents().subscribe(eventsdb => {
-
       this.firstEvent = eventsdb[1]; // Obtener el primer restaurante
-
     });
-
 
     this.map = L.map('map', {
       center: [28.136154, -15.439822],
@@ -85,10 +75,6 @@ export class HomePage {
     }).addTo(this.map);
   }
 
-  goPlaces() {
-    this.navController.navigateForward('places');
-  }
-
   viewEvent(event: Event) {
     const navigationExtras: NavigationExtras = {
       queryParams: {
@@ -96,6 +82,33 @@ export class HomePage {
       }
     };
     this.navController.navigateForward('event-details', navigationExtras);
+  }
+
+  viewPlace(place: Place) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        place
+      }
+    };
+    this.navController.navigateForward('place-details', navigationExtras);
+  }
+
+  viewMuseum(museum: Museum) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        museum
+      }
+    };
+    this.navController.navigateForward('museum-details', navigationExtras);
+  }
+
+  viewRestaurant(restaurant: Restaurant) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        restaurant
+      }
+    };
+    this.navController.navigateForward('restaurant-details', navigationExtras);
   }
 
   changeSlide(index: number) {
@@ -106,7 +119,6 @@ export class HomePage {
     setTimeout(() => {
       slidesContainer.style.transition = '';
     }, 10);
-
     clearInterval(this.slideInterval); // Detener el intervalo actual
     this.startSlideInterval(); // Iniciar un nuevo intervalo
   }
