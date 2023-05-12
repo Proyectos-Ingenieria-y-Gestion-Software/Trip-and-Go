@@ -60,19 +60,20 @@
         </div>
       </div>
     </ion-scroll>
-
+    
     <div class="pagination">
-      <span class="dot" *ngFor="let item of places; let i = index" [class.active]="i === currentIndex"></span>
+      <span class="dot" *ngFor="let item of places; let i = index" [class.active]="i === currentIndex" (click)="changeSlide(i)"></span>
     </div>
+       
 
-    <div class="elementsTemplate">
-      <h1 class="title">DISCOVER RESTAURANTS</h1>
+    <div class="elementsTemplate" (click)="viewEvent(firstEvent)">
+      <h1 class="title">DISCOVER EVENTS</h1>
       <div class ="containerImageTemplate">
-        <img class="imageTemplate" src="{{ firstPlace.img }}">
+        <img class="imageTemplate" src="{{ firstEvent.img }}">
       </div>
       <div class ="containerDetails">
-      <div class="name">{{ firstPlace.name }}</div>
-      <div class="description">{{ firstPlace.description }}</div>
+      <div class="name">{{ firstEvent.name }}</div>
+      <div class="description">{{ firstEvent.description }}</div>
       <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
       </div>
     </div>
@@ -94,26 +95,27 @@
     <div class="elementsTemplate">
       <h1 class="title">DISCOVER MUSEUMS</h1>
       <div class ="containerImageTemplate">
-        <img class="imageTemplate" src="{{ firstPlace.img }}">
+        <img class="imageTemplate" src="{{ firstMuseum.img }}">
       </div>
       <div class ="containerDetails">
-      <div class="name">{{ firstPlace.name }}</div>
-      <div class="description">{{ firstPlace.description }}</div>
-      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      <div class="name">{{ firstMuseum.name }}</div>
+      <div class="description">{{ firstMuseum.description }}</div>
+      <a href="{{ firstMuseum.locationLink }}" class="url">See more</a>
       </div>
     </div>
 
     <div class="elementsTemplate">
       <h1 class="title">DISCOVER RESTAURANTS</h1>
       <div class ="containerImageTemplate">
-        <img class="imageTemplate" src="{{ firstPlace.img }}">
+        <img class="imageTemplate" src="{{ firstRestaurant.img }}">
       </div>
       <div class ="containerDetails">
-      <div class="name">{{ firstPlace.name }}</div>
-      <div class="description">{{ firstPlace.description }}</div>
-      <a href="{{ firstPlace.locationLink }}" class="url">See more</a>
+      <div class="name">{{ firstRestaurant.name }}</div>
+      <div class="description">{{ firstRestaurant.description }}</div>
+      <a href="{{ firstRestaurant.locationLink }}" class="url">See more</a>
       </div>
     </div>
+
     <div class = "containerLastTitle">
       <h1 class="lastTitle">PLACES NEAR YOU</h1>
     </div>
