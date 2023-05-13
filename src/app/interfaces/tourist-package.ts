@@ -1,8 +1,9 @@
 export interface TouristPackage {
-  events?: string[],
-  museums?: string[],
+  idEvent?: string[],
+  idMuseum?: string[],
   name?: string,
-  places?: string[],
-  restaurants?: string[],
+  idPlace?: string[],
+  idRestaurant?: string[],
+  img?: string,
   id?: string
 }
