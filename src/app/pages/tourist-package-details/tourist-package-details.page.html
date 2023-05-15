@@ -56,22 +56,22 @@
       </ion-row>
     </ion-grid>
     <img src="{{package.img}}" alt="">
-    <ion-item class="museums" *ngFor="let museum of museums">
+    <ion-item class="museum">
       <ion-thumbnail><img src="{{museum.img}}" alt=""></ion-thumbnail>
       <h2>{{museum.name}}</h2>
       <p>{{museum.description}}</p>
     </ion-item>
-    <ion-item class="events" *ngFor="let event of events">
+    <ion-item class="event">
       <ion-thumbnail><img src="{{event.img}}" alt=""></ion-thumbnail>
       <h2>{{event.name}}</h2>
       <p>{{event.description}}</p>
     </ion-item>
-    <ion-item class="places" *ngFor="let place of places">
+    <ion-item class="place">
       <ion-thumbnail><img src="{{place.img}}" alt=""></ion-thumbnail>
       <h2>{{place.name}}</h2>
       <p>{{place.description}}</p>
     </ion-item>
-    <ion-item class="restaurants" *ngFor="let restaurant of restaurants">
+    <ion-item class="restaurant">
       <ion-thumbnail><img src="{{restaurant.img}}" alt=""></ion-thumbnail>
       <h2>{{restaurant.name}}</h2>
       <p>{{restaurant.description}}</p>

@@ -18,10 +18,10 @@ import { RestaurantsService } from 'src/app/services/restaurants-service.service
 export class TouristPackageDetailsPage implements OnInit {
 
   package!: TouristPackage;
-  museums!: Museum[];
-  events!: Event[];
-  places!: Place[];
-  restaurants!: Restaurant[];
+  museum!: Museum;
+  event!: Event;
+  place!: Place;
+  restaurant!: Restaurant;
 
   constructor(private route: ActivatedRoute, private eventService: EventsService, private museumService: MuseumsService,
               private placeService: PlacesService, private restaurantService: RestaurantsService) { }
@@ -32,40 +32,31 @@ export class TouristPackageDetailsPage implements OnInit {
         this.package = params['touristPackage'];
 
         if (this.package.idRestaurant) {
-          this.package.idRestaurant.forEach(restaurantId => {
-            this.restaurantService.getRestaurantById(restaurantId).subscribe(restaurant => {
-              this.restaurants.concat(restaurant);
-              console.log(this.restaurants);
-            })
+          this.restaurantService.getRestaurantById(this.package.idRestaurant).subscribe(restaurant => {
+            this.restaurant = restaurant;
           });
         }
 
         if (this.package.idPlace) {
-          this.package.idPlace.forEach(placeId => {
-            this.placeService.getPlaceById(placeId).then(placeObs => {
-              placeObs.subscribe(place => {
-                this.places.push(place);
-              })
+          this.placeService.getPlaceById(this.package.idPlace).then(placeObs => {
+            placeObs.subscribe(place => {
+              this.place = place;
             })
           });
         }
 
         if (this.package.idEvent) {
-          this.package.idEvent.forEach(eventId => {
-            this.eventService.getEventById(eventId).then(eventObs => {
-              eventObs.subscribe(event => {
-                this.events.push(event);
-              })
+          this.eventService.getEventById(this.package.idEvent).then(eventObs => {
+            eventObs.subscribe(event => {
+              this.event = event;
             })
           });
         }
 
         if (this.package.idMuseum) {
-          this.package.idMuseum.forEach(musemId => {
-            this.museumService.getMuseumById(musemId).then(museumObs => {
-              museumObs.subscribe(museum => {
-                this.museums.push(museum);
-              })
+          this.museumService.getMuseumById(this.package.idMuseum).then(museumObs => {
+            museumObs.subscribe(museum => {
+              this.museum = museum;
             })
           });
         }
