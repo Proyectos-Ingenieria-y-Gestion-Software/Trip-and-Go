@@ -10,6 +10,7 @@ import { NavigationExtras } from '@angular/router';
 import * as L from 'leaflet';
 import { Map as LeafletMap, tileLayer, Marker } from 'leaflet';
 import { Museum } from '../interfaces/museum';
+import { GlobalDataService } from '../services/global-data.service';
 
 @Component({
   selector: 'app-home',
@@ -38,6 +39,7 @@ export class HomePage {
   slideInterval: any; // Variable para almacenar el intervalo
 
   constructor(
+    private globalData: GlobalDataService,
     private navController: NavController,
     private placesService: PlacesService,
     private eventsService: EventsService,
@@ -46,6 +48,7 @@ export class HomePage {
   ) {}
 
   ngOnInit() {
+    this.globalData.setVisibleComponents(true);
     this.placesService.getPlaces().subscribe(placesdb => {
       this.places = placesdb.slice(0, 5);
       this.firstPlace = placesdb[6];
