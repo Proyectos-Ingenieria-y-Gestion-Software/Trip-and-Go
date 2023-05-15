@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewChild, ElementRef } from '@angular/core';
+import { GlobalDataService } from 'src/app/services/global-data.service';
 
 @Component({
   selector: 'app-fqa',
   templateUrl: 'fqa.page.html',
   styleUrls: ['fqa.page.scss'],
 })
-export class FQAPage {
+export class FQAPage implements OnInit {
+
   @ViewChild('square', {static: true}) square!: ElementRef;
+
+  constructor(private globalData: GlobalDataService) { }
+
+  ngOnInit(): void {
+    this.globalData.setVisibleComponents(true);
+  }
 
   adjustSquareHeight() {
     const squareEl = this.square.nativeElement;
@@ -37,7 +45,7 @@ export class FQAPage {
       default:
         break;
     }
-  
+
     setTimeout(() => {
       this.adjustSquareHeight();
     }, 0);
