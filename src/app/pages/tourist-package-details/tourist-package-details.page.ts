@@ -9,6 +9,8 @@ import { EventsService } from 'src/app/services/events-service.service';
 import { MuseumsService } from 'src/app/services/museums-service.service';
 import { PlacesService } from 'src/app/services/places-service.service';
 import { RestaurantsService } from 'src/app/services/restaurants-service.service';
+import { NavigationExtras } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tourist-package-details',
@@ -23,7 +25,7 @@ export class TouristPackageDetailsPage implements OnInit {
   place!: Place;
   restaurant!: Restaurant;
 
-  constructor(private route: ActivatedRoute, private eventService: EventsService, private museumService: MuseumsService,
+  constructor(private navCtrl: NavController, private route: ActivatedRoute, private eventService: EventsService, private museumService: MuseumsService,
               private placeService: PlacesService, private restaurantService: RestaurantsService) { }
 
   ngOnInit() {
@@ -62,6 +64,42 @@ export class TouristPackageDetailsPage implements OnInit {
         }
       }
     });
+  }
+
+  viewMuseum(museum: Museum) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        museum
+      }
+    };
+    this.navCtrl.navigateForward('museum-details', navigationExtras);
+  }
+
+  viewEvent(event: Event) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        event
+      }
+    };
+    this.navCtrl.navigateForward('event-details', navigationExtras);
+  }
+
+  viewPlace(place: Place) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        place
+      }
+    };
+    this.navCtrl.navigateForward('place-details', navigationExtras);
+  }
+
+  viewRestaurant(restaurant: Restaurant) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        restaurant
+      }
+    };
+    this.navCtrl.navigateForward('restaurant-details', navigationExtras);
   }
 
 }
