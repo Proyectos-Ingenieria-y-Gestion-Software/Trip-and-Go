@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInput } from '@ionic/angular';
+import { GlobalDataService } from 'src/app/services/global-data.service';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +14,12 @@ export class LoginPage implements OnInit {
   @ViewChild('emailInput', { static: false }) emailInput!: IonInput;
   @ViewChild('passwordInput', { static: false }) passwordInput!: IonInput;
 
-  constructor() {
+  constructor(private globalData: GlobalDataService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.globalData.setVisibleComponents(true);
+  }
 
   login() {
     const email = this.emailInput.value;
