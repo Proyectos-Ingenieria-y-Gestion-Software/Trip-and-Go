@@ -51,15 +51,17 @@
     <ion-grid>
       <ion-row>
         <ion-button routerLink="/places" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-        <h1 style="color: var(--ion-color-primary)">{{place.name}}</h1>
+        <h1 style="color: var(--ion-color-primary)" class="name-place">{{place.name}}</h1>
       </ion-row>
     </ion-grid>
-    <img src="{{place.img}}" alt="">
-    <p style="color: var(--ion-text-color)">{{place.description}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Dificulty: </strong>{{place.level}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Location: </strong>{{place.locationName}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Valuation: </strong>{{place.valuation}}</p>
-    <ion-button href="{{place.locationLink}}" target="_blank">
+    <img src="{{place.img}}" alt="" class="img-place">
+    <div class="contenido">
+      <p style="color: var(--ion-text-color)">{{place.description}}</p>
+      <p style="color: var(--ion-text-color)"><strong>Dificulty: </strong>{{place.level}}</p>
+      <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{place.locationLink}}">{{place.locationName}}</a></p>
+      <p style="color: var(--ion-text-color)"><strong>Valuation: </strong>{{place.valuation}}</p>
+    </div>
+    <ion-button href="{{place.locationLink}}" target="_blank" class="button-place">
       OPEN ON MAP
     </ion-button>
   </ion-content>

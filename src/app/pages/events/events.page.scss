@@ -16,3 +16,33 @@
 .button-native::after {
   background: none;
 }
+
+.titulo{
+  margin-left: 3.25em;
+  margin-top: 2em;
+  font-weight: bold;
+}
+
+.EVENTS{
+  margin-left: 1.25em;
+  margin-top: 1em;
+}
+
+.events{
+  margin-bottom: 1.5em;
+}
+
+.name-event {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.date-event{
+  text-align: center;
+}
+
+.img-event{
+  border-radius: 1em;
+}

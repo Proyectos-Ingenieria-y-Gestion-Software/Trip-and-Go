@@ -50,17 +50,15 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">PLACES</h1>
+      <h1 style="color: var(--ion-color-primary)" class="titulo">PLACES</h1>
     </ion-row>
-    <div class="places">
-      <ion-item *ngFor="let place of places">
-        <ion-thumbnail slot="start" (click)="viewPlace(place)">
-          <img src="{{place.img}}" alt="image: {{place.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewPlace(place)">{{place.name}}</h2>
-          <strong>Location: </strong><a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a>
-        </ion-label>
+    <div class="PLACES">
+      <ion-item *ngFor="let place of places"  class="places">
+        <ion-card slot="start" (click)="viewPlace(place)">
+          <img src="{{place.img}}" alt="image: {{place.name}}" class="img-places">
+          <ion-card-title (click)="viewPlace(place)" class="name-places">{{place.name}}</ion-card-title>
+          <ion-card-content class="location-places">Location:<a href="{{place.locationLink}}" target="_blank">{{place.locationName}}</a></ion-card-content>
+        </ion-card>
       </ion-item>
     </div>
   </ion-content>

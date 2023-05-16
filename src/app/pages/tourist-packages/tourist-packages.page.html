@@ -50,16 +50,14 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">TOURIST PACKAGES</h1>
+      <h1 style="color: var(--ion-color-primary)" class="titulo">TOURIST PACKAGES</h1>
     </ion-row>
-    <div class="package">
+    <div class="PACKAGE">
       <ion-item *ngFor="let package of packages">
-        <ion-thumbnail slot="start" (click)="viewTouristPackage(package)">
-          <img src="{{package.img}}" alt="image: {{package.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewTouristPackage(package)">{{package.name}}</h2>
-        </ion-label>
+        <ion-card slot="start" (click)="viewTouristPackage(package)" class="package">
+          <img src="{{package.img}}" alt="image: {{package.name}}" class="img-package">
+          <ion-card-title (click)="viewTouristPackage(package)" class="name-package">{{package.name}}</ion-card-title>
+        </ion-card>
       </ion-item>
     </div>
   </ion-content>

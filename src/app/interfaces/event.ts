@@ -2,9 +2,11 @@ export interface Event {
   date?: string,
   description?: string,
   img?: string,
-  locationLink?: string,
+  link?: string,
   locationName?: string,
+  locationPlace?: string,
   name?: string,
   price?: string,
-  id?: string
+  id?: string,
+  place?:string
 }

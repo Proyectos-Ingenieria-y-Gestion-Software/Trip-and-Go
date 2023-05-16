@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     if(email && password) {
         this.auth.signInWithEmailAndPassword(email, password)
         console.log("ha iniciado sesion");
-        this.router.navigate(['/profile']); // Navega a la página de perfil
+        this.router.navigate(['/profile']);
       }else{
         console.log("no inicia sesion");
       }
