@@ -15,3 +15,32 @@
 .button-native::after {
   background: none;
 }
+
+.name-pack{
+  margin-left: 2em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.img-pack{
+  border-radius: 1em;
+}
+
+.img-Pack{
+  border-radius: 1em;
+  width: 90%;
+  margin-left: 1.2em;
+}
+
+.text-pack{
+  margin-left: 1em;
+}
+
+.museum, .place, .restaurant, .event{
+  margin-top: 1.5em;
+}
+
+.button-pack{
+  margin-top: 2em;
+  margin-left: 8em;
+}
