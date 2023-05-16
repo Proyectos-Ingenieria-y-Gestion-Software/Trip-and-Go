@@ -10,11 +10,12 @@ import { GlobalDataService } from 'src/app/services/global-data.service';
 export class SplashScreenPage implements OnInit {
   public buffer = 0.06;
   public progress = 0;
+  showSpinner=true;
 
   constructor(private router: Router, private globalData: GlobalDataService) {
     setInterval(() => {
-      this.buffer += 0.1;
-      this.progress += 0.1;
+      this.buffer += 0.15;
+      this.progress += 0.15;
       if (this.progress > 1) {
         this.router.navigate(['/home']);
         this.globalData.setVisibleComponents(true);
