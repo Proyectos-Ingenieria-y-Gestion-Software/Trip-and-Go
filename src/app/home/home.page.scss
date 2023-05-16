@@ -42,7 +42,7 @@
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
-  
+
 }
 
 
@@ -97,14 +97,14 @@ p {
 }
 
 .containerImageTemplate {
-  height: 170px; 
-  width: 125px; 
+  height: 170px;
+  width: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.imageTemplate { 
+.imageTemplate {
   max-width: 80%;
   max-height: 60%;
 }
@@ -124,7 +124,7 @@ p {
 
 
 
-.containerDetails {  
+.containerDetails {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.25fr 0.5fr 0.25fr;
@@ -136,7 +136,7 @@ p {
     "url";
 }
 
-.name { 
+.name {
   grid-area: name;
   font-size: 11px;
   text-align: justify;
@@ -149,15 +149,15 @@ p {
 }
 
 .description {
-  grid-area: description; 
+  grid-area: description;
   font-size: 7px;
   text-align: justify;
   margin-right: 10px;
   margin-top: 0px;
 }
 
-.url { 
-  grid-area: url; 
+.url {
+  grid-area: url;
   text-align: left;
   font-size: 7px;
   margin-right: 10px;
@@ -169,8 +169,8 @@ p {
 }
 
 
-.title { 
-  grid-area: title; 
+.title {
+  grid-area: title;
   font-size: 13px;
   margin-left: 15px;
   margin-bottom: -40px;
@@ -180,8 +180,8 @@ p {
   color: #145265;
 }
 
-.lastTitle { 
-  grid-area: title; 
+.lastTitle {
+  grid-area: title;
   font-size: 13px;
   font-family: 'Inter';
   font-style: normal;
@@ -202,3 +202,20 @@ p {
   margin-bottom: 50px;
 }
 
+.menu-header {
+  background-color: rgb(20, 82, 101, 0.63);
+}
+
+.close-button {
+  background: none;
+  color: black;
+  font-size: 30px;
+}
+
+.menu-btn {
+  font-size: 40px;
+}
+
+.button-native::after {
+  background: none;
+}
