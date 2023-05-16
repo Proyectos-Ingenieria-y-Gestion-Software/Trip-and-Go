@@ -1,13 +1,13 @@
-<ion-menu contentId="main-content" side="end">
+<ion-menu contentId="main-content" side="end" class="menu-header">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Trip&Go</ion-title>
+      <ion-title style="font-size: 20px;">Trip&Go</ion-title>
       <ion-menu-toggle side="end">
-        <ion-button><ion-icon name="close-outline"></ion-icon></ion-button>
+        <ion-button color="warning-rgb"><ion-icon class="close-button" name="close-outline"></ion-icon></ion-button>
       </ion-menu-toggle>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
+  <ion-content class="ion-padding header-content">
     <ion-list lines="none">
       <ion-item href="/login" class="login-singup">
         <ion-label>LOGIN  |  SINGUP</ion-label>
@@ -42,9 +42,8 @@
       <ion-buttons slot="start">
         <ion-avatar href="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
       </ion-buttons>
-      <ion-title>Trip&Go</ion-title>
       <ion-buttons slot="end">
-        <ion-menu-button></ion-menu-button>
+        <ion-menu-button class="menu-btn"></ion-menu-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
