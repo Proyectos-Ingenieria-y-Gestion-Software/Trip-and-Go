@@ -58,7 +58,7 @@
       <h1 style="color: var(--ion-color-primary)" class = pageTitle>FQ&A</h1>
     </ion-row>
   
-    <ion-card (click)="toggleCard1()" class = "cardContainer">
+    <ion-card (click)="toggleCard(1)" class = "cardContainer">
       <ion-card-header>
         <div class="header-content">
           <ion-card-title class="title">Question 1</ion-card-title>
@@ -77,7 +77,7 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card (click)="toggleCard2()" class = "cardContainer">
+    <ion-card (click)="toggleCard(2)" class = "cardContainer">
       <ion-card-header>
         <div class="header-content">
           <ion-card-title class="title">Question 2</ion-card-title>
@@ -96,7 +96,7 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card (click)="toggleCard3()" class = "cardContainer">
+    <ion-card (click)="toggleCard(3)" class = "cardContainer">
       <ion-card-header>
         <div class="header-content">
           <ion-card-title class="title">Question 3</ion-card-title>
@@ -115,6 +115,24 @@
       </ion-card-content>
     </ion-card>
 
+    <ion-card (click)="toggleCard(4)" class = "cardContainer">
+      <ion-card-header>
+        <div class="header-content">
+          <ion-card-title class="title">Question 4</ion-card-title>
+          <ion-buttons>
+            <ion-icon [name]="isCardExpanded4 ? 'chevron-up' : 'chevron-down'" size="large"></ion-icon>
+          </ion-buttons>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isCardExpanded4">
+        <h2 class = "contentText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </h2>
+      </ion-card-content>
+    </ion-card>
   
   </ion-content>
   

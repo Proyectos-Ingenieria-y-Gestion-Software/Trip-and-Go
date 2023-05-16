@@ -9,16 +9,25 @@ export class FQAPage {
   isCardExpanded1 = false;
   isCardExpanded2 = false;
   isCardExpanded3 = false;
+  isCardExpanded4 = false;
 
-  toggleCard1() {
-    this.isCardExpanded1 = !this.isCardExpanded1;
+  toggleCard(num: number) {
+    switch (num) {
+      case 1:
+        this.isCardExpanded1 = !this.isCardExpanded1;
+        break;
+      case 2:
+        this.isCardExpanded2 = !this.isCardExpanded2;
+        break;
+      case 3:
+        this.isCardExpanded3 = !this.isCardExpanded3;
+        break;
+      case 4:
+        this.isCardExpanded4 = !this.isCardExpanded4;
+        break;
+      default:
+        break;
+    }
   }
-
-  toggleCard2() {
-    this.isCardExpanded2 = !this.isCardExpanded2;
-  }
-
-  toggleCard3() {
-    this.isCardExpanded3 = !this.isCardExpanded3;
-  }
+  
 }
