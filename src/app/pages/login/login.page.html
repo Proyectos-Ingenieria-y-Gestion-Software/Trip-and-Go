@@ -9,12 +9,12 @@
   <ion-item-group class="content">
       <ion-item class="item">
         <ion-label label="Enter your email" class="texto" position="stacked">EMAIL</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="emailInput"></ion-input>
       </ion-item>
       
       <ion-item>
         <ion-label label="Enter a password" class="texto" position="stacked">PASSWORD</ion-label>
-        <ion-input [type]="showPassword ? 'text' : 'password'"></ion-input>
+        <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordInput"></ion-input>
         <ion-button (click)="togglePassword()" slot="end" class="ojo">
           <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
         </ion-button>

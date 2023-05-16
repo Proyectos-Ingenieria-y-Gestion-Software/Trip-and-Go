@@ -1,0 +1,31 @@
+.content{
+    margin-top: 4em;
+    margin-left: 1em;
+}
+
+.item{
+    margin-bottom: 2em;
+}
+
+.texto{
+    color: #145265;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.data{
+    margin-top: 0.3em;
+    background-color: #ebebeb ;
+    padding: 0.4em;
+    border-radius: 0.5em;
+}
+
+.custom-button {
+    --width: 2em;
+    margin-left: 6em;
+    margin-top: 8em;
+    font-weight: bold;
+    border: 0.15em solid #145265;
+    border-radius: 0.5em;
+  }
+  

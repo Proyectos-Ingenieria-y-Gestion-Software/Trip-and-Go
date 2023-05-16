@@ -11,6 +11,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     provideAuth(() => getAuth()),
     provideStorage (() => getStorage()),
     ReactiveFormsModule,

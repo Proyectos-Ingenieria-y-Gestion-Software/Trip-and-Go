@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Auth, authState, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from '@angular/fire/auth';
+import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { map, Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -49,34 +49,12 @@ export class UsersService {
     }
   }
 
-  loginEmail(email: string, password: string){
-    return signInWithEmailAndPassword(this.auth, email, password);
-  }
-
-  registerEmail(email: string, password: string, usuario: User) {
-      return createUserWithEmailAndPassword(this.auth, email, password).then(userCredential =>{
-        this.af.collection('usuarios').doc(userCredential.user.uid).set(usuario);
-      })
-  }
-
-  logOut() {
-    return signOut(this.auth);
-  }
-
   userLogged(){
     return authState(this.auth);
   }
 
   getCurrentUserId(){
     return this.auth.currentUser?.uid;
-  }
-
-  async resetPassword(email:string): Promise<void>{
-    try {
-      return this.afAuth.sendPasswordResetEmail(email);
-    } catch(error) {
-      console.log(error);
-    }
   }
 
 }
