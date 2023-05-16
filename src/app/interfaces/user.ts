@@ -1,7 +1,6 @@
 export interface User {
   email?: string,
   name?: string,
-  firstSurname?: string,
-  secondSurname?: string,
+  surname?: string,
   favourites?: string[]
 }

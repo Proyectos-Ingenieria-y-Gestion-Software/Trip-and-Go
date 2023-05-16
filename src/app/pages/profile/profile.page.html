@@ -51,23 +51,23 @@
   <ion-item-group class="content">
     <ion-item class="item">
       <ion-label class="texto" position="stacked">NAME</ion-label>
-      <ion-label class="data" position="stacked"></ion-label>
+      <ion-label class="data" position="stacked">{{user.name}}</ion-label>
     </ion-item>
   
     <ion-item class="item">
       <ion-label class="texto" position="stacked" >SURNAME</ion-label>
-      <ion-label class="data" position="stacked"></ion-label>
+      <ion-label class="data" position="stacked">{{user.surname}}</ion-label>
     </ion-item>
   
     <ion-item class="item">
       <ion-label class="texto" position="stacked" >EMAIL</ion-label>
-      <ion-label class="data" position="stacked"></ion-label>
+      <ion-label class="data" position="stacked">{{user.email}} </ion-label>
     </ion-item>
 
     <ion-item class="item">
       <ion-label aria-label="Enter an email" class="texto" position="stacked" >WISHLIST</ion-label>
     </ion-item>
 
-    <ion-button class="custom-button" fill="clear" routerLink="/home" ><ion-icon name="log-out-outline"></ion-icon>LOG OUT</ion-button>
+    <ion-button class="custom-button" fill="clear" routerLink="/home" (click)="logOut()"><ion-icon name="log-out-outline"></ion-icon>LOG OUT</ion-button>
   </ion-item-group>
 </div>
