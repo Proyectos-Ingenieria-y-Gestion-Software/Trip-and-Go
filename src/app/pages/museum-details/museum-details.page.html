@@ -51,15 +51,17 @@
     <ion-grid>
       <ion-row>
         <ion-button routerLink="/museums" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-        <h1 style="color: var(--ion-color-primary)">{{museum.name}}</h1>
+        <h1 style="color: var(--ion-color-primary)" class="name-museum">{{museum.name}}</h1>
       </ion-row>
     </ion-grid>
-    <img src="{{museum.img}}" alt="">
-    <p style="color: var(--ion-text-color)">{{museum.description}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Schedule: </strong>{{museum.schedule}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{museum.locationLink}}">{{museum.locationName}}</a></p>
-    <p style="color: var(--ion-text-color)"><strong>Price: </strong>{{museum.price}}</p>
-    <ion-button href="{{museum.locationLink}}" target="_blank">
+    <img src="{{museum.img}}" alt="" class="img-museum">
+    <div class="contenido">
+      <p style="color: var(--ion-text-color)">{{museum.description}}</p>
+      <p style="color: var(--ion-text-color)"><strong>Schedule: </strong>{{museum.schedule}}</p>
+      <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{museum.locationLink}}">{{museum.locationName}}</a></p>
+      <p style="color: var(--ion-text-color)"><strong>Price: </strong>{{museum.price}}</p>
+    </div>
+    <ion-button href="{{museum.locationLink}}" target="_blank" class="button-museum">
       BUY TICKETS
     </ion-button>
   </ion-content>
