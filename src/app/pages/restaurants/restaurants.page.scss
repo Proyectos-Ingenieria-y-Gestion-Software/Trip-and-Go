@@ -1,0 +1,17 @@
+.menu-header {
+  background-color: rgb(20, 82, 101, 0.63);
+}
+
+.close-button {
+  background: none;
+  color: black;
+  font-size: 30px;
+}
+
+.menu-btn {
+  font-size: 40px;
+}
+
+.button-native::after {
+  background: none;
+}
