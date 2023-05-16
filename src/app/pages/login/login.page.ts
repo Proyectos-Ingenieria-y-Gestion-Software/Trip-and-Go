@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInput } from '@ionic/angular';
 import { GlobalDataService } from 'src/app/services/global-data.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,21 +13,27 @@ export class LoginPage implements OnInit {
 
   showPassword = false;
 
-  @ViewChild('emailInput', { static: false }) emailInput!: IonInput;
-  @ViewChild('passwordInput', { static: false }) passwordInput!: IonInput;
+  emailInput!: string;
+  passwordInput!: string;
 
-  constructor(private globalData: GlobalDataService) {
+  constructor(private globalData: GlobalDataService, private auth: AngularFireAuth, private router: Router) {
   }
 
   ngOnInit() {
-    this.globalData.setVisibleComponents(true);
+    this.globalData.setVisibleComponents(false);
   }
 
   login() {
-    const email = this.emailInput.value;
-    const password = this.passwordInput.value;
-    // Aquí se puede comprobar si el usuario existe en Firebase y realizar la lógica de inicio de sesión
-  }
+    const email = this.emailInput;
+    const password = this.passwordInput;
+    if(email && password) {
+        this.auth.signInWithEmailAndPassword(email, password)
+        console.log("ha iniciado sesion");
+        this.router.navigate(['/profile']); // Navega a la página de perfil
+      }else{
+        console.log("no inicia sesion");
+      }
+    }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;

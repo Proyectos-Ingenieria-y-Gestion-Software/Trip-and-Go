@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInput } from '@ionic/angular';
-import { UsersService } from 'src/app/services/users-service.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,15 +12,17 @@ export class ForgotPasswordPage implements OnInit {
 
   @ViewChild('emailInput', { static: true }) emailInput!: IonInput;
 
-  constructor(private resetPasswordService: UsersService) { }
+  constructor(private auth: AngularFireAuth) { }
 
   ngOnInit() {
+   
   }
+  
 
   resetPassword() {
     const userEmail = this.emailInput.value as string;
     console.log('El correo electrónico ingresado es:', userEmail);
-    this.resetPasswordService.resetPassword(userEmail);
+    this.auth.sendPasswordResetEmail(userEmail);
   }
 
 }
