@@ -50,17 +50,15 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">RESTAURANTS</h1>
+      <h1 style="color: var(--ion-color-primary)" class="titulo">RESTAURANTS</h1>
     </ion-row>
-    <div class="restaurants">
-      <ion-item *ngFor="let restaurant of restaurants">
-        <ion-thumbnail slot="start" (click)="viewRestaurant(restaurant)">
-          <img src="{{restaurant.img}}" alt="image: {{restaurant.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewRestaurant(restaurant)">{{restaurant.name}}</h2>
-          <strong>{{restaurant.description}}</strong>
-        </ion-label>
+    <div class="RESTAURANTS">
+      <ion-item *ngFor="let restaurant of restaurants" class="restaurants">
+        <ion-card slot="start" (click)="viewRestaurant(restaurant)">
+          <img src="{{restaurant.img}}" alt="image: {{restaurant.name}}" class="img-restaurants">
+          <ion-card-title (click)="viewRestaurant(restaurant)" class="name-restaurants">{{restaurant.name}}</ion-card-title>
+          <ion-card-content class="desc-restaurants">{{restaurant.description}}</ion-card-content>
+        </ion-card>
       </ion-item>
     </div>
   </ion-content>

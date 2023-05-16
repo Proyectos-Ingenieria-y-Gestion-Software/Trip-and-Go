@@ -50,17 +50,15 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">EVENTS</h1>
+      <h1 style="color: var(--ion-color-primary)" class="titulo">EVENTS</h1>
     </ion-row>
     <div class="EVENTS">
-      <ion-item *ngFor="let event of events">
-        <ion-thumbnail slot="start" (click)="viewEvent(event)">
-          <img src="{{event.img}}" alt="image: {{event.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewEvent(event)">{{event.name}}</h2>
-          <p><strong>Event date: </strong>{{event.date}}</p>
-        </ion-label>
+      <ion-item *ngFor="let event of events" class="events">
+        <ion-card slot="start" (click)="viewEvent(event)">
+          <img src="{{event.img}}" alt="image: {{event.name}}" class="img-event">
+          <ion-card-title (click)="viewEvent(event)" class="name-event">{{event.name}}</ion-card-title>
+          <ion-card-subtitle class="date-event">Event date: {{event.date}}</ion-card-subtitle>
+        </ion-card>
       </ion-item>
     </div>
   </ion-content>

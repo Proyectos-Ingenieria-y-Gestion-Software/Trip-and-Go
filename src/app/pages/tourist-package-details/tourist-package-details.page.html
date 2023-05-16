@@ -40,7 +40,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-avatar href="/home"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
+        <ion-avatar href="/"><img src="../assets/icon/icono-header.png" alt="Logo-Header"></ion-avatar>
       </ion-buttons>
       <ion-buttons slot="end">
         <ion-menu-button class="menu-btn"></ion-menu-button>
@@ -51,39 +51,39 @@
     <ion-grid>
       <ion-row>
         <ion-button href="/tourist-packages" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-        <h1 style="color: var(--ion-color-primary)">{{package.name}}</h1>
+        <h1 style="color: var(--ion-color-primary)" class="name-pack">{{package.name}}</h1>
       </ion-row>
     </ion-grid>
-    <img src="{{package.img}}" alt="">
+    <img src="{{package.img}}" alt="" class="img-Pack">
     <ion-item class="museum" (click)="viewMuseum(museum)">
-      <ion-thumbnail><img src="{{museum.img}}" alt=""></ion-thumbnail>
-      <ion-label>
+      <ion-thumbnail><img src="{{museum.img}}" alt="" class="img-pack"></ion-thumbnail>
+      <ion-label class="text-pack">
         <h2>{{museum.name}}</h2>
         <p>{{museum.description}}</p>
       </ion-label>
     </ion-item>
     <ion-item class="event" (click)="viewEvent(event)">
-      <ion-thumbnail><img src="{{event.img}}" alt=""></ion-thumbnail>
-      <ion-label>
+      <ion-thumbnail><img src="{{event.img}}" alt="" class="img-pack"></ion-thumbnail>
+      <ion-label class="text-pack">
         <h2>{{event.name}}</h2>
         <p>{{event.description}}</p>
       </ion-label>
     </ion-item>
     <ion-item class="place" (click)="viewPlace(place)">
-      <ion-thumbnail><img src="{{place.img}}" alt=""></ion-thumbnail>
-      <ion-label>
+      <ion-thumbnail><img src="{{place.img}}" alt="" class="img-pack"></ion-thumbnail>
+      <ion-label class="text-pack">
         <h2>{{place.name}}</h2>
         <p>{{place.description}}</p>
       </ion-label>
     </ion-item>
     <ion-item class="restaurant" (click)="viewRestaurant(restaurant)">
-      <ion-thumbnail><img src="{{restaurant.img}}" alt=""></ion-thumbnail>
-      <ion-label>
+      <ion-thumbnail><img src="{{restaurant.img}}" alt="" class="img-pack"></ion-thumbnail>
+      <ion-label class="text-pack">
         <h2>{{restaurant.name}}</h2>
         <p>{{restaurant.description}}</p>
       </ion-label>
     </ion-item>
-    <ion-button target="_blank">
+    <ion-button target="_blank" class="button-pack">
       BOOK PACKAGE
     </ion-button>
   </ion-content>

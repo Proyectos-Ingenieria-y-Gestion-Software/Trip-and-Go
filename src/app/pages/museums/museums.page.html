@@ -50,17 +50,15 @@
   <ion-content>
     <ion-row>
       <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-      <h1 style="color: var(--ion-color-primary)">MUSEUMS</h1>
+      <h1 style="color: var(--ion-color-primary)" class="titulo">MUSEUMS</h1>
     </ion-row>
-    <div class="museums">
-      <ion-item *ngFor="let museum of museums">
-        <ion-thumbnail slot="start" (click)="viewMuseum(museum)">
-          <img src="{{museum.img}}" alt="image: {{museum.name}}">
-        </ion-thumbnail>
-        <ion-label>
-          <h2 (click)="viewMuseum(museum)">{{museum.name}}</h2>
-          <strong>{{museum.description}}</strong>
-        </ion-label>
+    <div class="MUSEUMS">
+      <ion-item *ngFor="let museum of museums" class="museums">
+        <ion-card slot="start" (click)="viewMuseum(museum)">
+          <img src="{{museum.img}}" alt="image: {{museum.name}}" class="img-museum">
+            <ion-card-title (click)="viewMuseum(museum)" class="name-museum">{{museum.name}}</ion-card-title>
+            <ion-card-content class="desc-museum">{{museum.description}}</ion-card-content>
+        </ion-card>
       </ion-item>
     </div>
   </ion-content>

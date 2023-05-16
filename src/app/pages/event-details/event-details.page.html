@@ -51,15 +51,18 @@
     <ion-grid>
       <ion-row>
         <ion-button routerLink="/events" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
-        <h1 style="color: var(--ion-color-primary)">{{event.name}}</h1>
+        <h1 style="color: var(--ion-color-primary)" class="name-event">{{event.name}}</h1>
       </ion-row>
     </ion-grid>
-    <img src="{{event.img}}" alt="">
-    <p style="color: var(--ion-text-color)">{{event.description}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Date: </strong>{{event.date}}</p>
-    <p style="color: var(--ion-text-color)"><strong>Location: </strong><a href="{{event.locationLink}}">{{event.locationName}}</a></p>
-    <p style="color: var(--ion-text-color)"><strong>Price: </strong>{{event.price}}</p>
-    <ion-button href="{{event.locationLink}}" target="_blank">
+    <img src="{{event.img}}" alt="" class="img-event">
+    <div class="contenido">
+      <p style="color: var(--ion-text-color)" class="description-event">{{event.description}}</p>
+      <p style="color: var(--ion-text-color)" class="date-event"><strong>Date: </strong>{{event.date}}</p>
+      <p style="color: var(--ion-text-color)" class="location-event"><strong>Location: </strong><a href="{{event.locationPlace}}">{{event.place}}</a></p>
+      <p style="color: var(--ion-text-color)" class="price-event"><strong>Price: </strong>{{event.price}}</p>
+    </div>
+    
+    <ion-button href="{{event.link}}" target="_blank" class="button-event">
       BUY TICKETS
     </ion-button>
   </ion-content>
