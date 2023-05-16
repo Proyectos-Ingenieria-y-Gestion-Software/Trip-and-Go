@@ -32,9 +32,9 @@
 
     <ion-item>
       <ion-label aria-label="Repeat a password" class="texto" position="stacked">REPEAT PASSWORD</ion-label>
-      <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Repeat the password" [(ngModel)]="repeatPassword" id="repeat-password-input"></ion-input>
-      <ion-button (click)="togglePassword()" slot="end" class="ojo">
-        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      <ion-input [type]="showPassword2 ? 'text' : 'password'" placeholder="Repeat the password" [(ngModel)]="repeatPassword" id="repeat-password-input"></ion-input>
+      <ion-button (click)="togglePassword2()" slot="end" class="ojo">
+        <ion-icon [name]="showPassword2 ? 'eye-off' : 'eye'"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-item-group>

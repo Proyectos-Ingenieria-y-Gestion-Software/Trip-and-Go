@@ -14,7 +14,7 @@ import { User } from 'src/app/interfaces/user';
 export class RegisterPage implements OnInit {
 
   showPassword = false;
-  credentials!: FormGroup;
+  showPassword2 = false;
 
   name!: string;
   surname!: string;
@@ -35,6 +35,10 @@ export class RegisterPage implements OnInit {
 
   togglePassword() {
     this.showPassword = !this.showPassword;
+  }
+
+  togglePassword2() {
+    this.showPassword2 = !this.showPassword2;
   }
 
   register(){
