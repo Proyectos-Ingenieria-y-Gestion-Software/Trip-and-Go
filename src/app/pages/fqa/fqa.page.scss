@@ -1,41 +1,37 @@
-.square-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.pageTitle{
+    margin-left: 100px;
 }
 
-.square {
-    width: 300px;
-    height: 100px;
-    max-height: 100px;
-    border-radius: 20px;
-    background-color: #ccc;
+.header-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 24px;
-    color: #145265;
-    transition: max-height 0.3s ease-out;
-
-    &.show-answer {
-        max-height: 500px;
-    }
+    text-align: center;
 }
   
-.square-text {
-    display: none;
-
-    &.show {
-        display: block;
-    }
+.title {
+    text-align: center;
+    color: #145265;
+    margin-left: 50px;
 }
 
-.answer {
-    font-size: 16px;
-    text-align: justify;
-    margin: 10px;
+.custom-icon{
+
+    color: #145265;
 }
 
+.contextText {
+    text-align: center; /* Centra el texto */
+}
+
+.cardContainer{
+
+    border: 2px solid #145265; /* Establece un borde de 1px con color #ccc */
+    border-radius: 25px; /* Agrega esquinas redondeadas */
+    padding: 10px; /* Agrega un espacio interno de 10px */
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+  
