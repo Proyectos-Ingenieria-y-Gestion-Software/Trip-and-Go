@@ -49,35 +49,90 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
-    <div class="square-container">
-      <div class="square" (click)="showText(1)">
-        <div class="square-label">Cuadrado 1</div>
-        <div class="square-content" *ngIf="showText1">
-          <span class="answer">Texto respuesta aquí</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="square-container">
-      <div class="square" (click)="showText(2)">
-        <div class="square-label">Cuadrado 2</div>
-        <div class="square-content" *ngIf="showText2">
-          <span class="answer">Texto respuesta aquí</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="square-container">
-      <div class="square" (click)="showText(3)">
-        <div class="square-label">Cuadrado 3</div>
-        <div class="square-content" *ngIf="showText3">
-          <span class="answer">Texto respuesta aquí</span>
-        </div>
-      </div>
-    </div>
   
-    <!-- Agrega más cuadrados aquí según sea necesario -->
+  <ion-content>
+
+    <ion-row>
+      <ion-button routerLink="/home" fill="clear"><ion-icon name="chevron-back-outline" color="primary"></ion-icon></ion-button>
+      <h1 style="color: var(--ion-color-primary)" class = pageTitle>FQ&A</h1>
+    </ion-row>
+  
+    <ion-card (click)="toggleCard(1)" class = "cardContainer">
+      <ion-card-header>
+        <div class="header-content">
+          <ion-card-title class="title">Question 1</ion-card-title>
+          <ion-buttons>
+            <ion-icon [name]="isCardExpanded1 ? 'chevron-up' : 'chevron-down'" size="large"></ion-icon>
+          </ion-buttons>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isCardExpanded1">
+        <h2 class = "contentText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="toggleCard(2)" class = "cardContainer">
+      <ion-card-header>
+        <div class="header-content">
+          <ion-card-title class="title">Question 2</ion-card-title>
+          <ion-buttons>
+            <ion-icon [name]="isCardExpanded2 ? 'chevron-up' : 'chevron-down'" size="large"></ion-icon>
+          </ion-buttons>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isCardExpanded2">
+        <h2 class = "contentText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="toggleCard(3)" class = "cardContainer">
+      <ion-card-header>
+        <div class="header-content">
+          <ion-card-title class="title">Question 3</ion-card-title>
+          <ion-buttons>
+            <ion-icon [name]="isCardExpanded3 ? 'chevron-up' : 'chevron-down'" size="large"></ion-icon>
+          </ion-buttons>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isCardExpanded3">
+        <h2 class = "contentText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="toggleCard(4)" class = "cardContainer">
+      <ion-card-header>
+        <div class="header-content">
+          <ion-card-title class="title">Question 4</ion-card-title>
+          <ion-buttons>
+            <ion-icon [name]="isCardExpanded4 ? 'chevron-up' : 'chevron-down'" size="large"></ion-icon>
+          </ion-buttons>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isCardExpanded4">
+        <h2 class = "contentText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </h2>
+      </ion-card-content>
+    </ion-card>
   
   </ion-content>
   
