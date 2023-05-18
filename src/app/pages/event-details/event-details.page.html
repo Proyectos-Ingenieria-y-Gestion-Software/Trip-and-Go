@@ -58,10 +58,10 @@
     <div class="contenido">
       <p style="color: var(--ion-text-color)" class="description-event">{{event.description}}</p>
       <p style="color: var(--ion-text-color)" class="date-event"><strong>Date: </strong>{{event.date}}</p>
-      <p style="color: var(--ion-text-color)" class="location-event"><strong>Location: </strong><a href="{{event.locationPlace}}">{{event.place}}</a></p>
+      <p style="color: var(--ion-text-color)" class="location-event"><strong>Location: </strong><a href="{{event.locationPlace}}" target="_blank">{{event.place}}</a></p>
       <p style="color: var(--ion-text-color)" class="price-event"><strong>Price: </strong>{{event.price}}</p>
     </div>
-    
+
     <ion-button href="{{event.link}}" target="_blank" class="button-event">
       BUY TICKETS
     </ion-button>
