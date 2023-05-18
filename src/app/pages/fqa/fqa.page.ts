@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GlobalDataService } from 'src/app/services/global-data.service';
 
 @Component({
   selector: 'app-fqa',
   templateUrl: 'fqa.page.html',
   styleUrls: ['fqa.page.scss'],
 })
-export class FQAPage {
+export class FQAPage implements OnInit {
   isCardExpanded1 = false;
   isCardExpanded2 = false;
   isCardExpanded3 = false;
   isCardExpanded4 = false;
+
+  constructor(private globalData: GlobalDataService) {
+
+  }
+  ngOnInit(): void {
+    this.globalData.setVisibleComponents(true);
+  }
 
   toggleCard(num: number) {
     switch (num) {
@@ -29,5 +37,5 @@ export class FQAPage {
         break;
     }
   }
-  
+
 }
