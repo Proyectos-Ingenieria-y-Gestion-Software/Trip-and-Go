@@ -26,14 +26,31 @@ export class LoginPage implements OnInit {
   login() {
     const email = this.emailInput;
     const password = this.passwordInput;
-    if(email && password) {
-        this.auth.signInWithEmailAndPassword(email, password)
-        console.log("ha iniciado sesion");
-        this.router.navigate(['/profile']);
-      }else{
-        console.log("no inicia sesion");
-      }
+  
+    if (email && password) {
+      this.auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log("Se ha iniciado sesión");
+          if (userCredential.user) {
+            const uid = userCredential.user.uid;
+            const navExtras = {
+              queryParams: {
+                uid: uid
+              }
+            };
+            this.router.navigate(['/profile'], navExtras);
+          } else {
+            console.log("No se pudo obtener el usuario");
+          }
+        })
+        .catch((error) => {
+          console.log("No se pudo iniciar sesión:", error);
+        });
+    } else {
+      console.log("No se proporcionaron email y contraseña");
     }
+  }
+  
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;

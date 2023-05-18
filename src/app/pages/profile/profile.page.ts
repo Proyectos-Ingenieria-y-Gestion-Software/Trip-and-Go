@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalDataService } from 'src/app/services/global-data.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { NavigationExtras } from '@angular/router';
+import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { EventsService } from 'src/app/services/events-service.service';
 import { Event } from 'src/app/interfaces/event';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-profile',
@@ -14,14 +15,15 @@ import { Event } from 'src/app/interfaces/event';
 })
 export class ProfilePage implements OnInit {
 
-  user: any ={ };
+  user: User ={ };
   events: Event = { };
 
 
   constructor(private globalData: GlobalDataService, private auth: AngularFireAuth, private firestore: AngularFirestore, 
-    private navCtrl: NavController,private eventsService: EventsService,) {}
+    private navCtrl: NavController,private eventsService: EventsService, private router: ActivatedRoute) {}
 
   ngOnInit() {
+
     this.globalData.setVisibleComponents(true);
 
     this.eventsService.getEventById('JvUDCS7BogIQ4i63ViLY').then(observablePromise => {
@@ -31,11 +33,13 @@ export class ProfilePage implements OnInit {
     });
 
     this.auth.user.subscribe(user => {
+      console.log(user);
       if (user) {
         const uid = user.uid;
         this.firestore.collection('usuarios').doc(uid).valueChanges().subscribe((doc) => {
           if (doc) {
             this.user = doc;
+            console.log(this.user);
           } else {
             console.log('El documento no existe');
           }
