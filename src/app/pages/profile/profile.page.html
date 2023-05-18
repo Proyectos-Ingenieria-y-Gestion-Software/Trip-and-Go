@@ -37,7 +37,7 @@
   </ion-content>
 </ion-menu>
 
-<div class="container" id="main-content" >
+<ion-content class="container" id="main-content" [fullscreen]="true" >
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -48,7 +48,7 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="container" [fullscreen]="true">
+  <ion-content class="container" >
     <ion-item-group class="content" >
       <ion-item class="item">
         <ion-label class="texto" position="stacked">NAME</ion-label>
@@ -66,14 +66,14 @@
       </ion-item>
   
       <ion-item class="item">
-        <ion-label aria-label="Enter an email" class="texto" position="stacked" >WISHLIST</ion-label>
+        <ion-label class="texto" position="stacked" >WISHLIST</ion-label>
       </ion-item>
   
       <div class="WISHLIST">
           <ion-card slot="start">
-            <img src="{{events?.img}}" alt="image: {{events?.name}}" class="img-event">
-            <ion-card-title class="name-event">{{events?.name}}</ion-card-title>
-            <ion-card-subtitle class="date-event">Event date: {{events?.date}}</ion-card-subtitle>
+            <img src="{{events.img}}" alt="image: {{events.name}}" class="img-event">
+            <ion-card-title class="name-event">{{events.name}}</ion-card-title>
+            <ion-card-subtitle class="date-event">Event date: {{events.date}}</ion-card-subtitle>
           </ion-card>
       </div>
   
@@ -82,4 +82,4 @@
 
   </ion-content>
   
-</div>
+</ion-content>

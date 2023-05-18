@@ -15,7 +15,7 @@ import { Event } from 'src/app/interfaces/event';
 export class ProfilePage implements OnInit {
 
   user: any ={ };
-  events?: Event = { };
+  events: Event = { };
 
 
   constructor(private globalData: GlobalDataService, private auth: AngularFireAuth, private firestore: AngularFirestore, 

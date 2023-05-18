@@ -1,6 +1,9 @@
+
 .content{
     margin-top: 2em;
     margin-left: 1em;
+    max-height: max-content;
+    margin-bottom: 5em;
 }
 
 .texto{
@@ -19,10 +22,10 @@
 .custom-button {
     --width: 2em;
     margin-left: 6em;
-    margin-top: 30em;
     font-weight: bold;
     border: 0.15em solid #145265;
     border-radius: 0.5em;
+    margin-top: 26em;
   }
 
   .close-button {
@@ -52,4 +55,3 @@
   .img-event{
     border-radius: 1em;
   }
-  
