@@ -1,10 +1,6 @@
 .content{
-    margin-top: 4em;
+    margin-top: 2em;
     margin-left: 1em;
-}
-
-.item{
-    margin-bottom: 2em;
 }
 
 .texto{
@@ -23,7 +19,7 @@
 .custom-button {
     --width: 2em;
     margin-left: 6em;
-    margin-top: 8em;
+    margin-top: 30em;
     font-weight: bold;
     border: 0.15em solid #145265;
     border-radius: 0.5em;
@@ -33,5 +29,27 @@
     background: none;
     color: black;
     font-size: 30px;
+  }
+
+  .WISHLIST{
+    margin-top: -3em;
+    position: absolute;
+    z-index: 99;
+    max-width: 350px;
+  }
+
+  .name-event {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+    text-align: center;
+  }
+  
+  .date-event{
+    text-align: center;
+  }
+  
+  .img-event{
+    border-radius: 1em;
   }
   
